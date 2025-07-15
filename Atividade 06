@@ -1,0 +1,80 @@
+import java.util.Scanner; // Importa a classe Scanner para entrada de dados [5, 6]
+
+public class CalculoNotaFinal {
+
+    public static void main(String[] args) {
+        // Define a constante MEDIA_APROVACAO [6]
+        final double MEDIA_APROVACAO = 7.0; 
+
+        // Cria um objeto Scanner para ler a entrada do teclado [5, 6]
+        Scanner scanner = new Scanner(System.in); 
+
+        // Solicita e lê as notas das duas provas [6, 10]
+        System.out.print("Digite a nota da primeira prova: ");
+        double nota1 = scanner.nextDouble(); // Lê um valor double [6, 7]
+
+        System.out.print("Digite a nota da segunda prova: ");
+        double nota2 = scanner.nextDouble(); // Lê um valor double [6, 7]
+
+        // Calcula a média aritmética das notas [6]
+        double media = (nota1 + nota2) / 2;
+
+        // Verifica se o aluno foi aprovado e exibe o resultado [6]
+        if (media >= MEDIA_APROVACAO) {
+            System.out.println("Aprovado: true");
+        } else {
+            System.out.println("Aprovado: false");
+        }
+
+        // Fecha o objeto Scanner para liberar recursos [10, 13]
+        scanner.close(); 
+    }
+}
+
+import java.util.Scanner;
+
+public class VerificacaoCompra {
+    public static void main(String[] args) {
+        final double TAXA_DESCONTO = 0.10; // 10%
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o preço do produto: ");
+        double precoProduto = scanner.nextDouble();
+
+        System.out.print("Digite o valor que o cliente tem disponível: ");
+        double valorDisponivel = scanner.nextDouble();
+
+        double precoComDesconto = precoProduto * (1 - TAXA_DESCONTO);
+
+        if (valorDisponivel >= precoComDesconto) {
+            System.out.println("Compra permitida: true");
+        } else {
+            System.out.println("Compra permitida: false");
+        }
+
+        scanner.close(); // É boa prática fechar o Scanner [10].
+    }
+}
+
+import java.util.Scanner;
+
+public class TriagemDoacaoSangue {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        final int PESO_MINIMO = 50; // kg
+
+        System.out.print("Digite a idade da pessoa: ");
+        int idade = scanner.nextInt();
+
+        System.out.print("Digite o peso corporal da pessoa (em kg): ");
+        double peso = scanner.nextDouble();
+
+        if (idade >= 18 && peso >= PESO_MINIMO) {
+            System.out.println("Apto para doar: true");
+        } else {
+            System.out.println("Apto para doar: false");
+        }
+
+        scanner.close();
+    }
+}
